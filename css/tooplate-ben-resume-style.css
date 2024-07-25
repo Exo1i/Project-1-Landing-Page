@@ -97,6 +97,19 @@ body.dark-mode .profile-list li strong {
     color: white !important;
 }
 
+body.dark-mode .col-lg-6.col-md-6.col-12 p {
+    color: #ffffff; /* Or any color you prefer for dark mode */
+}
+
+#theme-btn {
+    position: absolute;
+    top: 20px; /* Adjust the distance from the top as needed */
+    right: 20px; /* Adjust the distance from the right as needed */
+    font-size: 30px; /* Adjust the size as needed */
+    z-index: 1000; /* Ensure it's above other content */
+    cursor: pointer; /* Change the cursor to indicate it's clickable */
+}
+
 /*---------------------------------------
    TYPOGRAPHY
 -----------------------------------------*/
@@ -395,6 +408,11 @@ a:hover {
     display: inline-block;
     width: 30%;
     margin-right: 1rem;
+}
+
+html {
+    scroll-behavior: smooth;
+
 }
 
 .card {

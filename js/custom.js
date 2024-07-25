@@ -7,13 +7,8 @@ $(function () {
         });
 
         $(window).on("scroll", function () {
-            /*----------------------------------------------------*/
-            /*  Navigtion Menu Scroll
-                /*----------------------------------------------------*/
-
-            var b = $(window).scrollTop();
-
-            if (b > 72) {
+            var scrollDistance = $(window).scrollTop();
+            if (scrollDistance > 72) {
                 $(".navbar").addClass("scroll");
             } else {
                 $(".navbar").removeClass("scroll");
@@ -78,7 +73,7 @@ $(function () {
                 i = 0;
                 idx++;
             } else
-                return;
+                idx = i = 0;
 
 
             await sleep(speed); // Wait for the typing speed
@@ -92,3 +87,37 @@ $(function () {
 function enableDarkMode() {
     document.body.classList.toggle("dark-mode");
 }
+
+
+// JavaScript code to make the navbar draggable
+const navBar = document.getElementById('nav-bar'); // Assuming the navbar has an id of 'nav-bar'
+
+let isDragging = false;
+let initialX, initialY, offsetX = 0, offsetY = 0;
+
+navBar.addEventListener('mousedown', function (e) {
+    isDragging = true;
+    initialX = e.clientX - offsetX;
+    initialY = e.clientY - offsetY;
+    // To prevent the default text selection behavior
+    e.preventDefault();
+});
+
+document.addEventListener('mousemove', function (e) {
+    if (isDragging) {
+        const mouseX = e.clientX;
+        const mouseY = e.clientY;
+
+        offsetX = mouseX - initialX;
+        offsetY = mouseY - initialY;
+
+        navBar.style.left = offsetX + 'px';
+        navBar.style.top = offsetY + 'px';
+    }
+});
+
+document.addEventListener('mouseup', function () {
+    isDragging = false;
+    initialX = offsetX;
+    initialY = offsetY;
+});

@@ -6,48 +6,84 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <title>Youssef Noser - Aspiring Computer Engineer</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/all.min.css">
         <link rel="stylesheet" href="css/owl.carousel.min.css">
         <link rel="stylesheet" href="css/owl.theme.default.min.css">
+        <script src="https://kit.fontawesome.com/0577357d2d.js" crossorigin="anonymous"></script>
         <!-- MAIN CSS -->
         <link rel="stylesheet" href="css/tooplate-ben-resume-style.css">
+        <link rel="stylesheet" href="css/background.css">
+        <link rel="stylesheet" href="css/navbar.css">
         <!-- Credits - https://www.tooplate.com/view/2120-ben-resume -->
     </head>
     <body data-spy="scroll" data-target="#navbarNav" data-offset="50">
+        <div id="theme-btn" onclick="enableDarkMode()" class="fa-solid fa-moon"></div>
+        <div class="stars">
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
 
+        </div>
         <!-- MENU BAR -->
-        <nav class="navbar navbar-expand-lg">
-            <div class="container">
-                <a class="navbar-brand" href="#intro">Youssef Noser</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav mx-auto">
-                        <li class="nav-item">
-                            <a href="#intro" class="nav-link smoothScroll">Introduction</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#about" class="nav-link smoothScroll">About Me</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#projects" class="nav-link smoothScroll">Projects</a>
-                        </li>
-                    </ul>
+        <div id="nav-bar" style="position: fixed;">
+            <input id="nav-toggle" type="checkbox" />
+            <div id="nav-header"><a id="nav-title" href="#"><i
+                    class="fa-solid fa-wand-magic"></i> Menu</a>
+                <label for="nav-toggle"><span id="nav-toggle-burger"></span></label>
+                <hr />
+            </div>
+            <div id="nav-content">
+                <div class="nav-button" onclick='document.getElementById("intro").scrollIntoView();'><i
+                        class="fa-solid fa-house"></i><span>&nbsp;&nbsp;Introduction</span>
+                </div>
+                <div
+                        class="nav-button" onclick='document.getElementById("projects").scrollIntoView();'><i
+                        class="fa-solid fa-code"></i><span>&nbsp;&nbsp;Projects</span>
+                </div>
+                <hr />
+                <div class="nav-button" onclick='window.open("https://github.com/exo1i", "_blank");'><i
+                        class="fa-brands fa-github-square"></i><span>&nbsp;&nbsp;&nbsp;
+                                                                                          GitHub</span></div>
+                <div class="nav-button "
+                     onclick='window.open("https://eg.linkedin.com/in/youssef-noser-a01034283", "_blank");'><i
+                        class="fa-brands fa-linkedin"
+                ></i><span>&nbsp;&nbsp; LinkedIn</span>
+                </div>
+                <div class="nav-button"
+                     onclick='window.open("https://www.reddit.com/user/AltruisticAct8211/", "_blank");'><i
+                        class="fa-brands fa-reddit"
+                ></i><span>&nbsp;&nbsp; Reddit</span>
+                </div>
+                <div id="nav-content-highlight"></div>
+            </div>
+            <input id="nav-footer-toggle" type="checkbox" />
+            <div id="nav-footer">
+                <div id="nav-footer-heading">
+                    <div id="nav-footer-avatar"><img
+                            src="https://avatars.githubusercontent.com/u/121557650?s=400&v=4" /></div>
+                    <div id="nav-footer-titlebox"><a id="nav-footer-title"
+                                                     href="https://avatars.githubusercontent.com/u/121557650?s=400&v=4"
+                                                     target="_blank">Exo1i</a></div>
+                    <label for="nav-footer-toggle"><i class="fas fa-caret-up"></i></label>
+                </div>
+                <div id="nav-footer-content">
+                    As an ardent and dedicated learner, I enthusiastically delve into various subjects, absorbing
+                    knowledge and continuously seeking intellectual growth.
 
-                    <div class="mt-lg-0 mt-3 mb-4 mb-lg-0">
-                        <a href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:cd8efcb3-758a-4f6b-b988-5467ea7bbc2e"
-                           class="custom-btn btn" download>Download CV</a>
-                    </div>
-                    <ul class="navbar-nav mx-auto">
-                        <li class="nav-item">
-                            <a href="#intro" class="nav-link smoothScroll" onclick="enableDarkMode()">🌙</a>
-                        </li>
-                    </ul>
                 </div>
             </div>
-        </nav>
+        </div>
 
         <!-- HERO -->
         <section class="hero d-flex flex-column justify-content-center align-items-center" id="intro">
@@ -73,11 +109,12 @@
                 <div class="row">
 
                     <div class="col-lg-6 col-md-6 col-12">
-                        <p>I'm a Computer Engineering student at Cairo University. Beyond the books, I stay in the loop
-                           with tech trends and verges, making me more than just a student — I'm a tech enthusiast in
-                           the making. I enjoy doing in-depth analysis, app development, penetration testing, and
-                           machine learning. I'm very enthusiastic about artificial intelligence and its real-life
-                           application in fields like health analysis, security, automation, and robotics.</p>
+                        <p>I'm a Computer Engineering student at Cairo University.
+                           Beyond the books, I stay in the loop with tech trends and verges, making me more than just
+                           a student — I'm a tech enthusiast in the making. I enjoy doing in-depth analysis, app
+                           development, penetration testing, and machine learning. I'm very enthusiastic about
+                           artificial intelligence and its real-life application in fields like health analysis,
+                           security, automation, and robotics.</p>
 
                         <ul class="mt-4 mb-5 mb-lg-0 profile-list list-unstyled">
                             <li><strong>Full Name :</strong> Youssef Noser</li>
