@@ -511,6 +511,19 @@ html {
 }
 
 @media screen and (max-width: 768px) {
+    /* Add this to your `navbar.css` file */
+    .navbar {
+        position: fixed !important;
+        top: 0;
+        width: 100%;
+        height: 60px; /* Set a specific height for the navbar */
+        z-index: 1000; /* Ensure it is above other content */
+        background: var(--menu-bg-color); /* Ensure background color is set */
+    }
+
+    body {
+        padding-top: 60px; /* Add padding to prevent content from being hidden behind the navbar */
+    }
 
     .hero-text {
         position: relative;

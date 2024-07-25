@@ -28,7 +28,7 @@
 }
 #nav-toggle:checked ~ #nav-header #nav-toggle-burger:before, #nav-toggle:checked ~ #nav-header #nav-toggle-burger::after {
   width: 16px;
-  background: var(--navbar-light-secondary);
+  background: var(--navbar-light-seconsary);
   transform: translate(0, 0) rotate(0deg);
 }
 #nav-toggle:checked ~ #nav-content .nav-button span {
