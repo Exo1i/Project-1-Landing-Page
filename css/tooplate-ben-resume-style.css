@@ -39,7 +39,7 @@ https://www.tooplate.com/view/2120-ben-resume
     --menu-bg-color: #212529;
 
     --gray-color: #909090;
-    --p-color: #7d7a7a;
+    --p-color: #000000;
 
     --base-font-family: "Plain", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-weight-bold: 600;
@@ -52,13 +52,15 @@ https://www.tooplate.com/view/2120-ben-resume
     --h4-font-size: 34px;
     --h5-font-size: 30px;
     --h6-font-size: 24px;
-    --p-font-size: 18px;
+    --p-font-size: 20px;
     --base-font-size: 16px;
     --button-font-size: 20px;
 
     --border-radius-large: 100%;
     --border-radius-medium: 80px;
     --border-radius-small: 40px;
+    --x: 0px;
+    --y: 0px;
 }
 
 
@@ -71,8 +73,8 @@ body {
 -----------------------------------------*/
 /* Dark mode styles */
 .dark-mode {
-    background-color: black;
-    color: white;
+    background-color: #121212;
+    color: #ffffff;
 }
 
 /* Dark mode styles for cards */
@@ -99,6 +101,11 @@ body.dark-mode .profile-list li strong {
 
 body.dark-mode .col-lg-6.col-md-6.col-12 p {
     color: #ffffff; /* Or any color you prefer for dark mode */
+}
+
+body.dark-mode .card-text {
+    background-color: #333;
+    color: #fff;
 }
 
 #theme-btn {
@@ -486,7 +493,20 @@ html {
     }
 }
 
+#nav-bar {
+    position: fixed !important;
+    top: 0;
+    z-index: 1000;
+    background: var(--menu-bg-color);
+}
+
 @media screen and (max-width: 992px) {
+    #nav-bar {
+        position: absolute !important;;
+        top: 0;
+        z-index: 1000;
+        background: var(--menu-bg-color);
+    }
 
     .hero-title {
         font-size: 1.8em;
@@ -561,3 +581,23 @@ html {
         text-align: center !important;
     }
 }
+
+@keyframes radialTransition {
+    0% {
+        clip-path: circle(0% at var(--x) var(--y));
+    }
+    100% {
+        clip-path: circle(150% at var(--x) var(--y));
+    }
+}
+
+.radial-transition {
+    animation: radialTransition 1s forwards;
+}
+
+
+/*
+
+
+
+*/

@@ -85,9 +85,27 @@ $(function () {
 
 //Dark Mode
 function enableDarkMode() {
-    document.body.classList.toggle("dark-mode");
-}
+    const body = document.body;
+    const button = document.getElementById('theme-btn');
+    const rect = button.getBoundingClientRect();
+    const x = rect.left + rect.width / 2;
+    const y = rect.top + rect.height / 2;
 
+    body.style.setProperty('--x', `${x}px`);
+    body.style.setProperty('--y', `${y}px`);
+
+    body.classList.add('radial-transition');
+
+    setTimeout(() => {
+        body.classList.toggle('dark-mode');
+    }, 50); // Short delay to allow the transition to start
+
+    setTimeout(() => {
+        body.classList.remove('radial-transition');
+    }, 300); // Match the duration of the animation
+
+
+}
 
 // JavaScript code to make the navbar draggable
 const navBar = document.getElementById('nav-bar'); // Assuming the navbar has an id of 'nav-bar'
@@ -121,3 +139,35 @@ document.addEventListener('mouseup', function () {
     initialX = offsetX;
     initialY = offsetY;
 });
+
+const target = {
+    clicked: 0,
+    currentFollowers: 90,
+    btn: document.querySelector("a.btn"),
+    fw: document.querySelector("span.followers")
+};
+
+const follow = () => {
+    target.clicked += 1;
+    target.btn.innerHTML = 'Following <i class="fas fa-user-times"></i>';
+
+    if (target.clicked % 2 === 0) {
+        target.currentFollowers -= 1;
+        target.btn.innerHTML = 'Follow <i class="fas fa-user-plus"></i>';
+    } else {
+        target.currentFollowers += 1;
+    }
+
+    target.fw.textContent = target.currentFollowers;
+    target.btn.classList.toggle("following");
+}
+
+window.dataLayer = window.dataLayer || [];
+
+function gtag() {
+    dataLayer.push(arguments);
+}
+
+gtag('js', new Date());
+
+gtag('config', 'G-18DZBEPQXY');
